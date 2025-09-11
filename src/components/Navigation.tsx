@@ -17,10 +17,9 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
     { id: 'faculty', label: 'Faculty' },
     { id: 'events', label: 'Events' },
     { id: 'gallery', label: 'Gallery' },
-    { id: 'alumni', label: 'Alumni' },
   ];
 
-  const teamYears = ['2024', '2023', '2022'];
+  const teamYears = ['2024-25', '2023-24', '2022-23'];
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -36,14 +35,14 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-orange-500/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="font-bold text-xl text-black cursor-pointer"
+            className="font-bold text-xl text-orange-500 cursor-pointer"
             onClick={() => scrollToSection('hero')}
           >
             CRESA
@@ -58,7 +57,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.id)}
                 className={`text-sm font-medium transition-colors ${
-                  currentSection === item.id ? 'text-black' : 'text-gray-600 hover:text-black'
+                  currentSection === item.id ? 'text-orange-500' : 'text-gray-300 hover:text-orange-500'
                 }`}
               >
                 {item.label}
@@ -71,7 +70,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                 whileHover={{ y: -2 }}
                 onMouseEnter={() => setIsTeamsOpen(true)}
                 onMouseLeave={() => setIsTeamsOpen(false)}
-                className="flex items-center space-x-1 text-sm font-medium text-gray-600 hover:text-black transition-colors"
+                className="flex items-center space-x-1 text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors"
               >
                 <span>Teams</span>
                 <ChevronDown className="w-4 h-4" />
@@ -85,13 +84,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                     exit={{ opacity: 0, y: 10 }}
                     onMouseEnter={() => setIsTeamsOpen(true)}
                     onMouseLeave={() => setIsTeamsOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-100 py-2"
+                    className="absolute top-full left-0 mt-2 w-32 bg-black/90 backdrop-blur-md rounded-lg shadow-lg border border-orange-500/20 py-2"
                   >
                     {teamYears.map((year) => (
                       <button
                         key={year}
                         onClick={() => scrollToSection('teams')}
-                        className="w-full px-4 py-2 text-left text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-colors"
+                        className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-orange-500 hover:bg-orange-500/10 transition-colors"
                       >
                         {year} Team
                       </button>
@@ -106,7 +105,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-600 hover:text-black transition-colors"
+            className="lg:hidden p-2 rounded-md text-gray-300 hover:text-orange-500 transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -120,7 +119,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-100"
+            className="lg:hidden bg-black/95 backdrop-blur-md border-t border-orange-500/20"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item, index) => (
@@ -130,7 +129,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-lg font-medium text-gray-800 hover:text-black transition-colors"
+                  className="block w-full text-left text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
                 >
                   {item.label}
                 </motion.button>
@@ -143,7 +142,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.1 }}
                   onClick={() => setIsTeamsOpen(!isTeamsOpen)}
-                  className="flex items-center space-x-2 text-lg font-medium text-gray-800 hover:text-black transition-colors"
+                  className="flex items-center space-x-2 text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
                 >
                   <span>Teams</span>
                   <ChevronDown className={`w-4 h-4 transform transition-transform ${isTeamsOpen ? 'rotate-180' : ''}`} />
@@ -161,7 +160,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                         <button
                           key={year}
                           onClick={() => scrollToSection('teams')}
-                          className="block text-gray-600 hover:text-black transition-colors"
+                          className="block text-gray-400 hover:text-orange-500 transition-colors"
                         >
                           {year} Team
                         </button>

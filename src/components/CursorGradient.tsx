@@ -19,7 +19,7 @@ const CursorGradient: React.FC = () => {
     <div
       className="fixed inset-0 pointer-events-none z-0 opacity-30"
       style={{
-        background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 165, 0, 0.15), transparent 40%)`,
+        background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 110, 0, 0.15), transparent 40%)`,
       }}
     />
   );

@@ -8,7 +8,6 @@ import Faculty from './components/Faculty';
 import Teams from './components/Teams';
 import Events from './components/Events';
 import Gallery from './components/Gallery';
-import Alumni from './components/Alumni';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
 
@@ -17,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'team', 'faculty', 'teams', 'events', 'gallery', 'alumni'];
+      const sections = ['hero', 'team', 'faculty', 'teams', 'events', 'gallery'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -47,7 +46,6 @@ function App() {
       <Teams />
       <Events />
       <Gallery />
-      <Alumni />
       <Stats />
       <Footer />
     </div>

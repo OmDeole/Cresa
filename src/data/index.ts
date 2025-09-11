@@ -73,7 +73,51 @@ export const faculty: Professor[] = [
 ];
 
 export const pastTeams = {
-  '2022': [
+  '2024-25': [
+    {
+      id: '2024-1',
+      name: 'Alex Johnson',
+      role: 'President',
+      image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
+      bio: 'Leading the association through successful tech initiatives.',
+      linkedin: 'https://linkedin.com'
+    },
+    {
+      id: '2024-2',
+      name: 'Maria Garcia',
+      role: 'Vice President',
+      image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=300',
+      bio: 'Coordinating major events and partnerships.',
+      linkedin: 'https://linkedin.com'
+    },
+    {
+      id: '2024-3',
+      name: 'Ryan Lee',
+      role: 'Technical Lead',
+      image: 'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=300',
+      bio: 'Organizing hackathons and coding competitions.',
+      linkedin: 'https://linkedin.com'
+    }
+  ],
+  '2023-24': [
+    {
+      id: '2023-1',
+      name: 'Jessica Wang',
+      role: 'President',
+      image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
+      bio: 'Pioneered the mentorship program.',
+      linkedin: 'https://linkedin.com'
+    },
+    {
+      id: '2023-2',
+      name: 'Kevin Smith',
+      role: 'Vice President',
+      image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=300',
+      bio: 'Enhanced industry connections.',
+      linkedin: 'https://linkedin.com'
+    }
+  ],
+  '2022-23': [
     {
       id: '2022-1',
       name: 'Rahul Sharma',
@@ -96,50 +140,6 @@ export const pastTeams = {
       role: 'Technical Lead',
       image: 'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=300',
       bio: 'Built the first student project showcase platform.',
-      linkedin: 'https://linkedin.com'
-    }
-  ],
-  '2023': [
-    {
-      id: '2023-1',
-      name: 'Jessica Wang',
-      role: 'President',
-      image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Pioneered the mentorship program.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      id: '2023-2',
-      name: 'Kevin Smith',
-      role: 'Vice President',
-      image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Enhanced industry connections.',
-      linkedin: 'https://linkedin.com'
-    }
-  ],
-  '2024': [
-    {
-      id: '2024-1',
-      name: 'Alex Johnson',
-      role: 'President',
-      image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Led the association through successful tech initiatives.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      id: '2024-2',
-      name: 'Maria Garcia',
-      role: 'Vice President',
-      image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Coordinated major events and partnerships.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      id: '2024-3',
-      name: 'Ryan Lee',
-      role: 'Technical Lead',
-      image: 'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Organized hackathons and coding competitions.',
       linkedin: 'https://linkedin.com'
     }
   ],
@@ -180,35 +180,6 @@ export const events: Event[] = [
   }
 ];
 
-export const alumni: Alumni[] = [
-  {
-    id: '1',
-    name: 'Jennifer Liu',
-    graduationYear: '2020',
-    achievement: 'Senior Software Engineer at Google',
-    company: 'Google',
-    image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=300',
-    linkedin: 'https://linkedin.com'
-  },
-  {
-    id: '2',
-    name: 'Marcus Johnson',
-    graduationYear: '2019',
-    achievement: 'Founder & CEO of TechStart',
-    company: 'TechStart',
-    image: 'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=300',
-    linkedin: 'https://linkedin.com'
-  },
-  {
-    id: '3',
-    name: 'Priya Patel',
-    graduationYear: '2021',
-    achievement: 'Machine Learning Researcher at Meta',
-    company: 'Meta',
-    image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
-    linkedin: 'https://linkedin.com'
-  }
-];
 
 export const galleryItems: GalleryItem[] = [
   {

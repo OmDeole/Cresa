@@ -62,10 +62,10 @@ const EventCalendar: React.FC = () => {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Background with subtle pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='5' cy='5' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6E00' fill-opacity='0.1'%3E%3Ccircle cx='5' cy='5' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
       </div>
 
@@ -81,6 +81,8 @@ const EventCalendar: React.FC = () => {
             Upcoming Events
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          </p>
+          <p className="text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed">
             Stay updated with our latest activities and workshops
           </p>
         </motion.div>
@@ -95,15 +97,15 @@ const EventCalendar: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+              className="bg-orange-500/10 backdrop-blur-md rounded-xl p-6 border border-orange-500/30 hover:bg-orange-500/20 transition-all duration-300 shadow-lg shadow-orange-500/10"
             >
               {/* Event Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <div className="bg-white/20 rounded-lg p-2">
+                  <div className="bg-orange-500/30 rounded-lg p-2">
                     <Calendar className="w-5 h-5 text-white" />
                   </div>
-                  <span className="text-white/80 font-medium">{event.date}</span>
+                  <span className="text-orange-200 font-medium">{event.date}</span>
                 </div>
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${categoryColors[event.category]}`}>
                   {event.category}
@@ -117,15 +119,15 @@ const EventCalendar: React.FC = () => {
 
               {/* Event Details */}
               <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-blue-100">
+                <div className="flex items-center space-x-2 text-orange-100">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm">{event.time}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-blue-100">
+                <div className="flex items-center space-x-2 text-orange-100">
                   <MapPin className="w-4 h-4" />
                   <span className="text-sm">{event.location}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-blue-100">
+                <div className="flex items-center space-x-2 text-orange-100">
                   <Users className="w-4 h-4" />
                   <span className="text-sm">{event.attendees} expected attendees</span>
                 </div>
@@ -144,7 +146,7 @@ const EventCalendar: React.FC = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-white text-blue-700 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300"
+            className="px-8 py-3 bg-orange-500 text-black rounded-full font-semibold hover:bg-orange-400 transition-colors duration-300 shadow-lg shadow-orange-500/25"
           >
             View All Events
           </motion.button>
