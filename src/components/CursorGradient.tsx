@@ -16,12 +16,29 @@ const CursorGradient: React.FC = () => {
   }, []);
 
   return (
-    <div
-      className="fixed inset-0 pointer-events-none z-0 opacity-30"
-      style={{
-        background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 110, 0, 0.15), transparent 40%)`,
-      }}
-    />
+    <>
+      {/* Main cursor glow - larger radius */}
+      <div
+        className="fixed inset-0 pointer-events-none z-30 opacity-40"
+        style={{
+          background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 110, 0, 0.2), transparent 50%)`,
+        }}
+      />
+      {/* Medium glow */}
+      <div
+        className="fixed inset-0 pointer-events-none z-30 opacity-50"
+        style={{
+          background: `radial-gradient(400px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 110, 0, 0.25), transparent 60%)`,
+        }}
+      />
+      {/* Intense center glow */}
+      <div
+        className="fixed inset-0 pointer-events-none z-30 opacity-60"
+        style={{
+          background: `radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255, 110, 0, 0.4), transparent 70%)`,
+        }}
+      />
+    </>
   );
 };
 

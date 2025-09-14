@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import CursorGradient from './components/CursorGradient';
 import EventCalendar from './components/EventCalendar';
 import Navigation from './components/Navigation';
@@ -31,12 +31,26 @@ function App() {
       }
     };
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Check for Ctrl+Shift+C combination
+      if (event.ctrlKey && event.shiftKey && event.key === 'C') {
+        event.preventDefault();
+        alert('Website created by Om Deole & Ishwar Sonawane 🚀');
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
+      {/* Main Content */}
       <CursorGradient />
       <Navigation currentSection={currentSection} onSectionChange={setCurrentSection} />
       <Hero />

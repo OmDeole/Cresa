@@ -43,8 +43,8 @@ const Stats: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center mb-4">
-            <BarChart3 className="w-8 h-8 text-white mr-3" />
-            <span className="text-sm font-semibold text-gray-300 uppercase tracking-wider">Impact</span>
+            <BarChart3 className="w-8 h-8 text-orange-500 mr-3" />
+            <span className="text-sm font-semibold text-orange-400 uppercase tracking-wider">Impact</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-4">
             Our Achievements

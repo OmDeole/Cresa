@@ -17,12 +17,14 @@ export interface Professor {
   bio: string;
   email?: string;
   specialization?: string;
+  linkedin?: string;
 }
 
 export interface Event {
   id: string;
   title: string;
   date: string;
+  year: string;
   description: string;
   image: string;
   category: string;

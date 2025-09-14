@@ -75,14 +75,12 @@ const EventCalendar: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 text-white"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Upcoming Events
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-          </p>
-          <p className="text-xl text-orange-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Stay updated with our latest activities and workshops
           </p>
         </motion.div>
@@ -97,7 +95,7 @@ const EventCalendar: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className="bg-orange-500/10 backdrop-blur-md rounded-xl p-6 border border-orange-500/30 hover:bg-orange-500/20 transition-all duration-300 shadow-lg shadow-orange-500/10"
+              className="bg-orange-500/10 backdrop-blur-md rounded-xl p-6 border border-orange-500/30 hover:bg-orange-500/20 hover:shadow-orange-500/40 transition-all duration-300 shadow-lg shadow-orange-500/10 group"
             >
               {/* Event Header */}
               <div className="flex items-start justify-between mb-4">
@@ -107,7 +105,7 @@ const EventCalendar: React.FC = () => {
                   </div>
                   <span className="text-orange-200 font-medium">{event.date}</span>
                 </div>
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${categoryColors[event.category]}`}>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${categoryColors[event.category]} group-hover:shadow-orange-500/30 transition-all duration-300`}>
                   {event.category}
                 </span>
               </div>
@@ -119,17 +117,13 @@ const EventCalendar: React.FC = () => {
 
               {/* Event Details */}
               <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-orange-100">
+                <div className="flex items-center space-x-2 text-gray-200">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm">{event.time}</span>
                 </div>
-                <div className="flex items-center space-x-2 text-orange-100">
+                <div className="flex items-center space-x-2 text-gray-200">
                   <MapPin className="w-4 h-4" />
                   <span className="text-sm">{event.location}</span>
-                </div>
-                <div className="flex items-center space-x-2 text-orange-100">
-                  <Users className="w-4 h-4" />
-                  <span className="text-sm">{event.attendees} expected attendees</span>
                 </div>
               </div>
             </motion.div>
@@ -146,7 +140,7 @@ const EventCalendar: React.FC = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-orange-500 text-black rounded-full font-semibold hover:bg-orange-400 transition-colors duration-300 shadow-lg shadow-orange-500/25"
+            className="px-8 py-3 bg-orange-500 text-black rounded-full font-semibold hover:bg-orange-400 hover:shadow-orange-500/50 transition-all duration-300 shadow-lg shadow-orange-500/25"
           >
             View All Events
           </motion.button>

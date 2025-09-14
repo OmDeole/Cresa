@@ -19,7 +19,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
     { id: 'gallery', label: 'Gallery' },
   ];
 
-  const teamYears = ['2024-25', '2023-24', '2022-23'];
+  const teamYears = ['2025-26', '2024-25'];
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -39,13 +39,52 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo and Brand */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="font-bold text-xl text-orange-500 cursor-pointer"
+            className="flex items-center space-x-3 cursor-pointer"
             onClick={() => scrollToSection('hero')}
           >
-            CRESA
+            {/* Logo Image */}
+            <div className="w-8 h-8 relative">
+              <img 
+                src="/logo/Untitled_design-removebg-preview.png" 
+                alt="CRESA Logo" 
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  // Fallback to CSS-based logo if image not found
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'block';
+                }}
+              />
+              {/* Fallback CSS logo */}
+              <div className="w-full h-full hidden">
+                <div className="w-full h-full rounded-full border border-orange-500 bg-black flex items-center justify-center relative">
+                  <div className="w-3/4 h-3/4 relative">
+                    <div className="absolute inset-0 rounded-full border border-orange-500"></div>
+                    <div className="absolute inset-1">
+                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-2">
+                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
+                      </div>
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2">
+                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
+                      </div>
+                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-2 h-2">
+                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
+                      </div>
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2">
+                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
+                      </div>
+                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-orange-500 rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Brand Name */}
+            <span className="font-bold text-xl text-orange-500">CRESA</span>
           </motion.div>
 
           {/* Desktop Navigation */}

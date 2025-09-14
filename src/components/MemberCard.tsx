@@ -19,7 +19,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, type = 'team' }) => {
       whileHover={{ y: -8 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+      className="group relative bg-gray-900/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-orange-500/40 transition-all duration-300 overflow-hidden border border-orange-500/30 hover:border-orange-500/60"
     >
       {/* Image Container */}
       <div className="relative h-64 overflow-hidden">
@@ -45,11 +45,11 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, type = 'team' }) => {
       {/* Content */}
       <div className="p-6">
         <div className="text-center">
-          <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-          <p className="text-gray-600 font-medium">{member.role}</p>
+          <h3 className="text-xl font-semibold text-white mb-1">{member.name}</h3>
+          <p className="text-orange-400 font-medium">{member.role}</p>
           
           {type === 'faculty' && 'specialization' in member && member.specialization && (
-            <p className="text-sm text-gray-500 mt-2">{member.specialization}</p>
+            <p className="text-sm text-gray-300 mt-2">{member.specialization}</p>
           )}
         </div>
 
@@ -62,7 +62,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, type = 'team' }) => {
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-gray-100 rounded-full hover:bg-black hover:text-white transition-colors duration-300"
+              className="p-2 bg-orange-500/20 rounded-full hover:bg-orange-500 hover:text-black hover:shadow-orange-500/40 transition-all duration-300"
             >
               <Linkedin className="w-4 h-4" />
             </motion.a>
@@ -73,9 +73,22 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, type = 'team' }) => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               href={`mailto:${member.email}`}
-              className="p-2 bg-gray-100 rounded-full hover:bg-black hover:text-white transition-colors duration-300"
+              className="p-2 bg-orange-500/20 rounded-full hover:bg-orange-500 hover:text-black hover:shadow-orange-500/40 transition-all duration-300"
             >
               <Mail className="w-4 h-4" />
+            </motion.a>
+          )}
+          
+          {type === 'faculty' && 'linkedin' in member && member.linkedin && (
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-orange-500/20 rounded-full hover:bg-orange-500 hover:text-black hover:shadow-orange-500/40 transition-all duration-300"
+            >
+              <Linkedin className="w-4 h-4" />
             </motion.a>
           )}
         </div>
@@ -85,7 +98,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ member, type = 'team' }) => {
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isHovered ? 1 : 0 }}
-        className="absolute bottom-0 left-0 right-0 h-0.5 bg-black origin-left"
+        className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-500 origin-left"
       />
     </motion.div>
   );

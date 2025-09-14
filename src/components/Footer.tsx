@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
                   href={social.href}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 bg-orange-500/20 rounded-lg hover:bg-orange-500/30 transition-colors duration-300"
+                  className="p-2 bg-orange-500/20 rounded-lg hover:bg-orange-500/30 hover:shadow-orange-500/40 transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
                 </motion.a>
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
                   <motion.button
                     whileHover={{ x: 4 }}
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 text-left"
+                    className="text-gray-200 hover:text-orange-400 hover:shadow-orange-500/20 transition-all duration-300 text-left"
                   >
                     {link.name}
                   </motion.button>
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
             transition={{ delay: 0.2 }}
           >
             <h4 className="text-lg font-semibold mb-4">Programs</h4>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2 text-gray-200">
               <li>Hackathons</li>
               <li>Tech Workshops</li>
               <li>Industry Talks</li>
@@ -127,11 +127,11 @@ const Footer: React.FC = () => {
               <ContactMap />
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4" />
-                <span className="text-sm text-gray-300">contact@cresa.edu</span>
+                <span className="text-sm text-gray-200">contact@cresa.edu</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-sm text-gray-200">+1 (555) 123-4567</span>
               </div>
             </div>
           </motion.div>
@@ -146,13 +146,13 @@ const Footer: React.FC = () => {
           className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
           <p className="text-gray-400 text-sm">
-            © 2024 Computer Regional Engineering Student Association. All rights reserved.
+            © 2025 CRESA. Website crafted by Om Deole & Ishwar Sonawane.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href="#" className="text-gray-400 hover:text-orange-400 hover:shadow-orange-500/20 text-sm transition-all duration-300">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-orange-500 text-sm transition-colors">
+            <a href="#" className="text-gray-400 hover:text-orange-400 hover:shadow-orange-500/20 text-sm transition-all duration-300">
               Terms of Service
             </a>
           </div>

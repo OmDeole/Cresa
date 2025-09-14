@@ -6,7 +6,7 @@ import { faculty } from '../data';
 
 const Faculty: React.FC = () => {
   return (
-    <section id="faculty" className="py-20 bg-gray-50">
+    <section id="faculty" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -16,13 +16,13 @@ const Faculty: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center mb-4">
-            <GraduationCap className="w-8 h-8 text-black mr-3" />
-            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Academic Excellence</span>
+            <GraduationCap className="w-8 h-8 text-orange-500 mr-3" />
+            <span className="text-sm font-semibold text-orange-400 uppercase tracking-wider">Academic Excellence</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Department Faculty
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Our distinguished faculty members bring decades of industry experience and academic excellence to guide our students.
           </p>
         </motion.div>
@@ -47,12 +47,12 @@ const Faculty: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 text-center bg-white rounded-2xl p-8 shadow-sm"
+          className="mt-16 text-center bg-orange-500/10 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30 hover:bg-orange-500/20 transition-all duration-300"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-2xl font-bold text-white mb-4">
             Department of Computer Engg. Regional
           </h3>
-          <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-orange-100 leading-relaxed max-w-4xl mx-auto">
             Our department is committed to providing cutting-edge education in regional computer engineering, 
             fostering innovation, and preparing students for successful careers in technology. With 
             state-of-the-art facilities and industry partnerships, we ensure our students receive 

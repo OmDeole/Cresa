@@ -7,7 +7,7 @@ const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -17,13 +17,13 @@ const Gallery: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center mb-4">
-            <Camera className="w-8 h-8 text-black mr-3" />
-            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Memories</span>
+            <Camera className="w-8 h-8 text-orange-500 mr-3" />
+            <span className="text-sm font-semibold text-orange-300 uppercase tracking-wider">Memories</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Interactive Gallery
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Capturing moments of innovation, collaboration, and success from our events and activities.
           </p>
         </motion.div>
@@ -38,7 +38,7 @@ const Gallery: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="relative group cursor-pointer overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-lg transition-all duration-300"
+              className="relative group cursor-pointer overflow-hidden rounded-xl bg-gray-900/50 shadow-lg hover:shadow-orange-500/20 transition-all duration-300 border border-orange-500/20 hover:border-orange-500/40"
               onClick={() => setSelectedImage(item.src)}
             >
               <div className={`relative ${index % 5 === 0 ? 'row-span-2 h-80' : 'h-40'} overflow-hidden`}>
@@ -49,7 +49,7 @@ const Gallery: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-2">
+                  <div className="bg-orange-500/90 backdrop-blur-sm rounded-full p-2">
                     <Camera className="w-6 h-6 text-black" />
                   </div>
                 </div>

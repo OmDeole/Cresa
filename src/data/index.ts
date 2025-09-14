@@ -48,7 +48,8 @@ export const faculty: Professor[] = [
     image: 'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=300',
     bio: 'Leading the Computer Engg. Regional department with 15+ years of experience in software engineering and research.',
     email: 'hod@university.edu',
-    specialization: 'Software Architecture, Database Systems'
+    specialization: 'Software Architecture, Database Systems',
+    linkedin: 'https://linkedin.com/in/robert-wilson'
   },
   {
     id: '2',
@@ -58,7 +59,8 @@ export const faculty: Professor[] = [
     image: 'https://images.pexels.com/photos/5212700/pexels-photo-5212700.jpeg?auto=compress&cs=tinysrgb&w=300',
     bio: 'Expert in artificial intelligence and machine learning with numerous published research papers.',
     email: 'lisa.thompson@university.edu',
-    specialization: 'AI/ML, Natural Language Processing'
+    specialization: 'AI/ML, Natural Language Processing',
+    linkedin: 'https://linkedin.com/in/lisa-thompson'
   },
   {
     id: '3',
@@ -68,14 +70,15 @@ export const faculty: Professor[] = [
     image: 'https://images.pexels.com/photos/5212320/pexels-photo-5212320.jpeg?auto=compress&cs=tinysrgb&w=300',
     bio: 'Specializing in cybersecurity and network systems with industry consulting experience.',
     email: 'james.park@university.edu',
-    specialization: 'Cybersecurity, Network Systems'
+    specialization: 'Cybersecurity, Network Systems',
+    linkedin: 'https://linkedin.com/in/james-park'
   }
 ];
 
 export const pastTeams = {
-  '2024-25': [
+  '2025-26': [
     {
-      id: '2024-1',
+      id: '2025-1',
       name: 'Alex Johnson',
       role: 'President',
       image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
@@ -83,7 +86,7 @@ export const pastTeams = {
       linkedin: 'https://linkedin.com'
     },
     {
-      id: '2024-2',
+      id: '2025-2',
       name: 'Maria Garcia',
       role: 'Vice President',
       image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=300',
@@ -91,7 +94,7 @@ export const pastTeams = {
       linkedin: 'https://linkedin.com'
     },
     {
-      id: '2024-3',
+      id: '2025-3',
       name: 'Ryan Lee',
       role: 'Technical Lead',
       image: 'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=300',
@@ -99,9 +102,9 @@ export const pastTeams = {
       linkedin: 'https://linkedin.com'
     }
   ],
-  '2023-24': [
+  '2024-25': [
     {
-      id: '2023-1',
+      id: '2024-1',
       name: 'Jessica Wang',
       role: 'President',
       image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
@@ -109,40 +112,14 @@ export const pastTeams = {
       linkedin: 'https://linkedin.com'
     },
     {
-      id: '2023-2',
+      id: '2024-2',
       name: 'Kevin Smith',
       role: 'Vice President',
       image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=300',
       bio: 'Enhanced industry connections.',
       linkedin: 'https://linkedin.com'
     }
-  ],
-  '2022-23': [
-    {
-      id: '2022-1',
-      name: 'Rahul Sharma',
-      role: 'President',
-      image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Established the foundation for modern CRESA.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      id: '2022-2',
-      name: 'Priya Singh',
-      role: 'Vice President',
-      image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Initiated the first regional tech symposium.',
-      linkedin: 'https://linkedin.com'
-    },
-    {
-      id: '2022-3',
-      name: 'Amit Patel',
-      role: 'Technical Lead',
-      image: 'https://images.pexels.com/photos/3777931/pexels-photo-3777931.jpeg?auto=compress&cs=tinysrgb&w=300',
-      bio: 'Built the first student project showcase platform.',
-      linkedin: 'https://linkedin.com'
-    }
-  ],
+  ]
 };
 
 export const events: Event[] = [

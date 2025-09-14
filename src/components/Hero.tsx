@@ -8,33 +8,18 @@ const Hero: React.FC = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
       
-      {/* Glowing Vertical Beam */}
+      {/* Subtle background particles */}
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
-          initial={{ opacity: 0, scaleY: 0 }}
-          animate={{ opacity: 1, scaleY: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="relative"
-        >
-          {/* Main beam */}
-          <div className="w-1 h-screen bg-gradient-to-b from-transparent via-orange-500 to-transparent opacity-80" />
-          
-          {/* Glow effect */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 h-screen bg-gradient-to-b from-transparent via-orange-500/30 to-transparent blur-xl" />
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-screen bg-gradient-to-b from-transparent via-orange-500/10 to-transparent blur-3xl" />
-          
-          {/* Animated particles */}
-          <motion.div
-            animate={{ y: [-20, -100, -20] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full blur-sm"
-          />
-          <motion.div
-            animate={{ y: [20, 100, 20] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-orange-300 rounded-full blur-sm"
-          />
-        </motion.div>
+          animate={{ y: [-20, -100, -20] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-orange-400/30 rounded-full blur-sm"
+        />
+        <motion.div
+          animate={{ y: [20, 100, 20] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-orange-300/30 rounded-full blur-sm"
+        />
       </div>
       
       {/* Background Pattern */}
@@ -43,6 +28,7 @@ const Hero: React.FC = () => {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6E00' fill-opacity='0.3'%3E%3Ccircle cx='5' cy='5' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
       </div>
+
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

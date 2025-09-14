@@ -47,12 +47,95 @@ body {
 
 /* Focus styles */
 *:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #FF6E00;
   outline-offset: 2px;
 }
 
 /* Selection styles */
 ::selection {
-  background-color: #000;
-  color: #fff;
+  background-color: #FF6E00;
+  color: #000;
+}
+
+/* Enhanced Global hover glow effects */
+button:not(.no-glow):hover,
+a:not(.no-glow):hover,
+.hover-glow:hover,
+[role="button"]:hover,
+.group:hover {
+  box-shadow: 
+    0 0 20px rgba(255, 110, 0, 0.6),
+    0 0 40px rgba(255, 110, 0, 0.4),
+    0 0 60px rgba(255, 110, 0, 0.2),
+    inset 0 0 20px rgba(255, 110, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(1.1);
+}
+
+/* Enhanced Interactive elements glow */
+button:not(.no-glow),
+a:not(.no-glow),
+select:not(.no-glow),
+input:not(.no-glow),
+[role="button"] {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+button:not(.no-glow):hover,
+a:not(.no-glow):hover,
+[role="button"]:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 8px 30px rgba(255, 110, 0, 0.6),
+    0 0 40px rgba(255, 110, 0, 0.4),
+    0 0 60px rgba(255, 110, 0, 0.2),
+    inset 0 0 20px rgba(255, 110, 0, 0.1);
+  filter: brightness(1.15) saturate(1.1);
+}
+
+/* Enhanced Card hover effects */
+.group:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 
+    0 12px 40px rgba(255, 110, 0, 0.4),
+    0 0 50px rgba(255, 110, 0, 0.3),
+    0 0 80px rgba(255, 110, 0, 0.15),
+    inset 0 0 30px rgba(255, 110, 0, 0.05);
+  filter: brightness(1.05);
+}
+
+/* Dynamic focus glow */
+button:not(.no-glow):focus,
+a:not(.no-glow):focus,
+input:not(.no-glow):focus,
+select:not(.no-glow):focus {
+  box-shadow: 
+    0 0 0 3px rgba(255, 110, 0, 0.3),
+    0 0 20px rgba(255, 110, 0, 0.5),
+    0 0 40px rgba(255, 110, 0, 0.3);
+  outline: none;
+}
+
+/* Pulsing glow for active elements */
+button:not(.no-glow):active,
+a:not(.no-glow):active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 
+    0 4px 20px rgba(255, 110, 0, 0.7),
+    0 0 30px rgba(255, 110, 0, 0.5),
+    inset 0 0 15px rgba(255, 110, 0, 0.2);
+  filter: brightness(1.2);
+}
+
+/* Ensure text readability */
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Override any remaining white backgrounds */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FF6E00 #1a1a1a;
 }

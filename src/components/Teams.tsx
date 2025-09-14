@@ -9,7 +9,7 @@ const Teams: React.FC = () => {
   const years = Object.keys(pastTeams);
 
   return (
-    <section id="teams" className="py-20 bg-gray-50">
+    <section id="teams" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -19,13 +19,13 @@ const Teams: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center mb-4">
-            <Users className="w-8 h-8 text-black mr-3" />
-            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Legacy</span>
+            <Users className="w-8 h-8 text-orange-500 mr-3" />
+            <span className="text-sm font-semibold text-orange-400 uppercase tracking-wider">Legacy</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Teams Over the Years
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Honoring the dedicated leaders who have shaped our association throughout the years.
           </p>
         </motion.div>
@@ -41,7 +41,7 @@ const Teams: React.FC = () => {
             <select
               value={selectedYear}
               onChange={(e) => setSelectedYear(e.target.value)}
-              className="appearance-none bg-white border-2 border-gray-900 rounded-full px-6 py-3 pr-12 font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 cursor-pointer"
+              className="appearance-none bg-gray-900 border-2 border-orange-500 rounded-full px-6 py-3 pr-12 font-semibold text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-black cursor-pointer"
             >
               {years.map((year) => (
                 <option key={year} value={year}>
@@ -49,7 +49,7 @@ const Teams: React.FC = () => {
                 </option>
               ))}
             </select>
-            <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-900 pointer-events-none" />
+            <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-orange-500 pointer-events-none" />
           </div>
         </motion.div>
 
@@ -81,12 +81,12 @@ const Teams: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-16 bg-white rounded-2xl p-8 shadow-sm"
+          className="text-center mt-16 bg-orange-500/10 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30 hover:bg-orange-500/20 transition-all duration-300"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-2xl font-bold text-white mb-4">
             Building on Legacy
           </h3>
-          <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-orange-100 leading-relaxed max-w-3xl mx-auto">
             Each year, our teams have contributed to the growth and excellence of our association. 
             From organizing groundbreaking events to fostering innovation, our past leaders continue 
             to inspire and guide future generations of computer engineers.

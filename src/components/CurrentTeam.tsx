@@ -6,7 +6,7 @@ import { currentTeam } from '../data';
 
 const CurrentTeam: React.FC = () => {
   return (
-    <section id="team" className="py-20 bg-white">
+    <section id="team" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -16,13 +16,13 @@ const CurrentTeam: React.FC = () => {
           className="text-center mb-16"
         >
           <div className="flex items-center justify-center mb-4">
-            <Users className="w-8 h-8 text-black mr-3" />
-            <span className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Leadership</span>
+            <Users className="w-8 h-8 text-orange-500 mr-3" />
+            <span className="text-sm font-semibold text-orange-400 uppercase tracking-wider">Leadership</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Current Team
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             Meet the dedicated leaders driving innovation and excellence in our regional Computer Engineering community.
           </p>
         </motion.div>
