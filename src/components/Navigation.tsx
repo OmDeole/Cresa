@@ -48,7 +48,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
             {/* Logo Image */}
             <div className="w-8 h-8 relative">
               <img 
-                src="/logo/Untitled_design-removebg-preview.png" 
+                src="logo/Untitled_design-removebg-preview.png" 
                 alt="CRESA Logo" 
                 className="w-full h-full object-contain"
                 onError={(e) => {
