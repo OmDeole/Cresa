@@ -51,37 +51,9 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                 src="logo/Untitled_design-removebg-preview.png" 
                 alt="CRESA Logo" 
                 className="w-full h-full object-contain"
-                onError={(e) => {
-                  // Fallback to CSS-based logo if image not found
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'block';
-                }}
+                
               />
-              {/* Fallback CSS logo */}
-              <div className="w-full h-full hidden">
-                <div className="w-full h-full rounded-full border border-orange-500 bg-black flex items-center justify-center relative">
-                  <div className="w-3/4 h-3/4 relative">
-                    <div className="absolute inset-0 rounded-full border border-orange-500"></div>
-                    <div className="absolute inset-1">
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-2">
-                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
-                      </div>
-                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2">
-                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
-                      </div>
-                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-2 h-2">
-                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
-                      </div>
-                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-2 h-2">
-                        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-80"></div>
-                      </div>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1 h-1 bg-orange-500 rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
             {/* Brand Name */}
             <span className="font-bold text-xl text-orange-500">CRESA</span>
