@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 interface NavigationProps {
   currentSection: string;
@@ -48,10 +49,9 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
             {/* Logo Image */}
             <div className="w-8 h-8 relative">
               <img 
-                src="/logo.png" 
+                src={logo} 
                 alt="CRESA Logo" 
                 className="w-full h-full object-contain"
-                
               />
               
             </div>
