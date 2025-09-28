@@ -8,7 +8,6 @@ import Faculty from './components/Faculty';
 import Teams from './components/Teams';
 import Events from './components/Events';
 import Gallery from './components/Gallery';
-import Stats from './components/Stats';
 import Footer from './components/Footer';
 
 function App() {
@@ -60,7 +59,6 @@ function App() {
       <Teams />
       <Events />
       <Gallery />
-      <Stats />
       <Footer />
     </div>
   );

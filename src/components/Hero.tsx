@@ -1,12 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Aurora from './Aurora';
 
 const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen relative flex items-center justify-center overflow-hidden bg-black">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+      {/* Aurora Effect */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Aurora
+          colorStops={["#FF6E00", "#FF6E00", "#FF6E00"]}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        />
+      </div>
       
       {/* Subtle background particles */}
       <div className="absolute inset-0 flex items-center justify-center">
@@ -52,10 +62,10 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-relaxed"
           >
             Empowering Minds
-            <span className="block mt-2 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="block mt-2 pb-2 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
               & Connecting Cultures
             </span>
           </motion.h1>
@@ -65,7 +75,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="mt-3 text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Connecting regional computer engineering students through innovation, collaboration, and academic excellence.
           </motion.p>

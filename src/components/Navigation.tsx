@@ -36,7 +36,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-orange-500/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -49,7 +49,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
             {/* Logo Image */}
             <div className="w-8 h-8 relative">
               <img 
-                src={logo} 
+                src={logo}
+                onError={(e) => {
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (target.src !== window.location.origin + '/vite.svg') {
+                    target.src = '/vite.svg';
+                  }
+                }}
                 alt="CRESA Logo" 
                 className="w-full h-full object-contain"
               />
@@ -60,63 +66,15 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.id}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors ${
-                  currentSection === item.id ? 'text-orange-500' : 'text-gray-300 hover:text-orange-500'
-                }`}
-              >
-                {item.label}
-              </motion.button>
-            ))}
-            
-            {/* Teams Dropdown */}
-            <div className="relative">
-              <motion.button
-                whileHover={{ y: -2 }}
-                onMouseEnter={() => setIsTeamsOpen(true)}
-                onMouseLeave={() => setIsTeamsOpen(false)}
-                className="flex items-center space-x-1 text-sm font-medium text-gray-300 hover:text-orange-500 transition-colors"
-              >
-                <span>Teams</span>
-                <ChevronDown className="w-4 h-4" />
-              </motion.button>
-              
-              <AnimatePresence>
-                {isTeamsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    onMouseEnter={() => setIsTeamsOpen(true)}
-                    onMouseLeave={() => setIsTeamsOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-32 bg-black/90 backdrop-blur-md rounded-lg shadow-lg border border-orange-500/20 py-2"
-                  >
-                    {teamYears.map((year) => (
-                      <button
-                        key={year}
-                        onClick={() => scrollToSection('teams')}
-                        className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:text-orange-500 hover:bg-orange-500/10 transition-colors"
-                      >
-                        {year} Team
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+          <div className="hidden">
+            {/* intentionally hidden per design: only logo + hamburger */}
           </div>
 
           {/* Mobile menu button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-300 hover:text-orange-500 transition-colors"
+            className="p-2 rounded-md text-gray-300 hover:text-orange-500 transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
@@ -127,33 +85,34 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-black/95 backdrop-blur-md border-t border-orange-500/20"
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+            className="lg:hidden absolute right-4 top-16 z-[60] w-64 rounded-lg bg-black/80 border border-orange-500/20 shadow-xl backdrop-blur-sm"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-3">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  transition={{ delay: index * 0.05 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
+                  className="block w-full text-left text-sm py-2 rounded-md text-gray-200 hover:text-orange-400 hover:bg-white/5 transition-colors"
                 >
                   {item.label}
                 </motion.button>
               ))}
               
               {/* Mobile Teams */}
-              <div>
+              <div className="pt-2 border-t border-white/10 mt-2">
                 <motion.button
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navItems.length * 0.1 }}
+                  transition={{ delay: navItems.length * 0.05 }}
                   onClick={() => setIsTeamsOpen(!isTeamsOpen)}
-                  className="flex items-center space-x-2 text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
+                  className="flex items-center justify-between w-full text-sm py-2 rounded-md text-gray-200 hover:text-orange-400 hover:bg-white/5 transition-colors"
                 >
                   <span>Teams</span>
                   <ChevronDown className={`w-4 h-4 transform transition-transform ${isTeamsOpen ? 'rotate-180' : ''}`} />
@@ -165,13 +124,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mt-2 ml-4 space-y-2"
+                      className="mt-1 ml-2 space-y-1 overflow-hidden"
                     >
                       {teamYears.map((year) => (
                         <button
                           key={year}
                           onClick={() => scrollToSection('teams')}
-                          className="block text-gray-400 hover:text-orange-500 transition-colors"
+                          className="block w-full text-left text-xs py-1.5 px-2 rounded-md text-gray-300 hover:text-orange-400 hover:bg-white/5 transition-colors"
                         >
                           {year} Team
                         </button>
